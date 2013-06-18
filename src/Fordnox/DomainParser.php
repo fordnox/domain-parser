@@ -1436,6 +1436,11 @@ class DomainParser
         return $this->tld;
     }
 
+    public function getSldTld()
+    {
+        return array($this->getSld(), $this->getTld());
+    }
+
     private function _parse()
     {
         if(strpos($this->string, '://')) {

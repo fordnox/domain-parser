@@ -26,4 +26,10 @@ class DomainParserTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($expected2, $parser->getTld());
     }
 
+    public function testTuple()
+    {
+        $parser = new Fordnox\DomainParser('example-domain.com');
+        $this->assertEquals(array('example-domain', 'com'), $parser->getSldTld());
+    }
+
 }
