@@ -32,4 +32,31 @@ class DomainParserTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(array('example-domain', 'com'), $parser->getSldTld());
     }
 
+    /**
+     * @expectedException Exception
+     */
+    public function testNullException()
+    {
+        $parser = new Fordnox\DomainParser(null);
+        $parser->getSldTld();
+    }
+
+    /**
+     * @expectedException Exception
+     */
+    public function testEmptyException()
+    {
+        $parser = new Fordnox\DomainParser('');
+        $parser->getSldTld();
+    }
+
+    /**
+     * @expectedException Exception
+     */
+    public function testException()
+    {
+        $parser = new Fordnox\DomainParser('domaincom');
+        $parser->getSldTld();
+    }
+
 }

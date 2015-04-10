@@ -1443,6 +1443,10 @@ class DomainParser
 
     private function _parse()
     {
+        if(strpos($this->string, '.') === false) {
+            throw new \Exception('Invalid domain name');
+        }
+
         if(strpos($this->string, '://')) {
             $urlData = parse_url($this->string);
             $hostData = explode('.', $urlData['host']);
