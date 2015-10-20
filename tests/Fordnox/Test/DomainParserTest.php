@@ -13,6 +13,7 @@ class DomainParserTest extends PHPUnit_Framework_TestCase
             array('http://bbc.co.uk/', 'bbc', 'co.uk'),
             array('http://github.com/bootstrap/',  'github', 'com'),
             array('https://www.google.com.br', 'google', 'com.br'),
+            array('https://www.net.in', 'net', 'in'),
         );
     }
 
